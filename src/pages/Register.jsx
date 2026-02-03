@@ -10,8 +10,8 @@ const Register = () => {
     password: "",
     phone: "",
   });
-  const [errors, setErrors] = useState({})
-  const navigate = useNavigate()
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   //logic section
 
@@ -27,17 +27,16 @@ const Register = () => {
     if (!formData.email.trim()) {
       newErrors.email = "email is required.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-
       newErrors.email = "invalid email format.";
     }
     if (!formData.phone.trim()) {
       newErrors.phone = "phonr number is required.";
-    } else if (!/^[0-9]\d{10}$/.test(formData.phone)) {
+    } else if (!/^\d{10}$/.test(formData.phone)) {
       newErrors.phone = "phone must be in 10 digit.";
     }
     if (!formData.password.trim()) {
       newErrors.password = "password is required.";
-    } else if (formData.password.length > 6) {
+    } else if (formData.password.length < 6) {
       newErrors.password = "minimum 6 character required.";
     }
     setErrors(newErrors);
@@ -50,20 +49,19 @@ const Register = () => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-      
     });
     setErrors({
-        ...errors,
-        [e.target.name]:""
-      })
+      ...errors,
+      [e.target.name]: "",
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(validate()){
-localStorage.setItem('authData',JSON.stringify(formData))
-navigate("/Login")
-alert('Regisration succesfully')
+    if (validate()) {
+      localStorage.setItem("authData", JSON.stringify(formData));
+      navigate("/Login");
+      alert("Regisration succesfully");
     }
   };
 
@@ -130,7 +128,7 @@ alert('Regisration succesfully')
               id="password"
               name="password"
               value={formData.password}
-              placehzolder="create a password"
+              placeholder="create a password"
               onChange={handleInputChange}
             />
             {errors.password && (
@@ -154,5 +152,4 @@ alert('Regisration succesfully')
     </>
   );
 };
-
 export default Register;
