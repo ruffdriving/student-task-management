@@ -11,6 +11,7 @@ const TaskList = () => {
           <span>Due:2026-02-10</span>
           <span className="priority-badge priority-high">High</span>
         </div>
+
         <div className="task-action">
           <button
             className="btn-icon"
@@ -19,7 +20,7 @@ const TaskList = () => {
           >
             ✏️
           </button>
-
+          
           <button
             className="btn-icon"
             style={{ background: "#00b894" }}
