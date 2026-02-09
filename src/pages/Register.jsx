@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
 
-const Register = () => {
   //declaration of state or logic
+const Register = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",

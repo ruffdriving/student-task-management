@@ -1,18 +1,25 @@
 import React from "react";
 
-const TaskList = ({ tasks}) => {
-  return (
+const TaskList=({tasks,editingTask,deletingTask})=>{
+  const handleEditClick =(task)=>{
+    editingTask(task)
+  }
+
+  const handleDeleteclick =(taskId)=>{
+    deletingTask(taskId)
+  }
+  return ( 
     <div className="task-grid">
       {tasks.map((task)=>(
-        
+
 
         <div className="task-card" style={{ position: "relative" }}>
-          <h3>{tasks.title}</h3>
-          <p>{tasks.description}</p>
+          <h3>{task.title}</h3>
+          <p>{task.description}</p>
 
           <div className="task-meta">
-            <span>{tasks.dueDate}</span>
-            <span className="priority-badge priority-high">{tasks.priority}</span>
+            <span>Due:{task.dueDate}</span>
+            <span className="priority-badge priority-high">{task.priority}</span>
           </div>
 
           <div className="task-action">
@@ -20,8 +27,9 @@ const TaskList = ({ tasks}) => {
               className="btn-icon"
               style={{ background: "#00d2ff" }}
               title="Edit task"
+              onClick={()=>handleEditClick(task)}
             >
-              ✏️
+            ✏️
             </button>
 
             <button
@@ -36,6 +44,7 @@ const TaskList = ({ tasks}) => {
               className="btn-icon"
               style={{ background: "#ff416c" }}
               title="Delete task"
+onClick={() => handleDeleteclick(task.id)}
             >
               🗑️
             </button>
@@ -46,5 +55,4 @@ const TaskList = ({ tasks}) => {
     </div>
   );
 };
-
 export default TaskList;

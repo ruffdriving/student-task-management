@@ -1,32 +1,28 @@
 {
-    "tasks": [
-        {
-        "id": "1",
-        "title": "welcome task",
-        "description" : "This is your task served from json-server",
-        "dueDate":"2025-09-31",
-        "completed": false,
-        "priority":"Medium"
-    
-        },
-
-        {
-        "id": "2",
-        "title": "welcome task 2",
-        "description" : "This is your task served from json-server",
-        "dueDate":"2025-09-31",
-        "completed": false,
-        "priority":"High"
-    
-        },
-         {
-        "id": "3",
-        "title": "welcome task 3",
-        "description" : "This is your task served from json-server",
-        "dueDate":"2025-09-31",
-        "completed": false,
-        "priority":"High"
-    
-        }
-    ]
+  "tasks": [
+    {
+      "id": "1",
+      "title": "welcome task",
+      "description": "This is your task served from json-server",
+      "dueDate": "2025-09-31",
+      "completed": false,
+      "priority": "Medium"
+    },
+    {
+      "id": "3",
+      "title": "welcome task 3",
+      "description": "This is your task served from json-server",
+      "dueDate": "2025-09-31",
+      "completed": false,
+      "priority": "High"
+    },
+    {
+      "id": "55bd",
+      "title": "hello",
+      "description": "pvm",
+      "dueDate": "2026-02-05",
+      "priority": "Low",
+      "completed": false
+    }
+  ]
 }

@@ -19,7 +19,7 @@ function App() {
   const route = createBrowserRouter([
     {
       path: "/",
-      element: <Register />,
+      element: defaultRoute() ,
     },
     {
       path: "/Login",
@@ -51,3 +51,4 @@ function App() {
 }
 
 export default App;
+ 
